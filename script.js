@@ -15,11 +15,29 @@ const winningCombinations = [
   [2, 4, 6],
 ];
 
-function initialGame() {}
+initialGame();
 
-function cellClick() {}
+function initialGame() {
+  cell.map((item) => item.addEventListener("click", cellClick));
+  running = true;
+}
 
-function changePlayer() {}
+function cellClick() {
+  let cellIndex = this.getAttribute("data-index");
+
+  if (spaces[cellIndex] !== "" || running == false) {
+    return;
+  }
+
+  spaces[cellIndex] = currentPlayer;
+
+  changePlayer(this);
+}
+
+function changePlayer(item) {
+  item.innerHTML = currentPlayer;
+  currentPlayer = currentPlayer === "O" ? "X" : "O";
+}
 
 function WinnerPlayer() {}
 
