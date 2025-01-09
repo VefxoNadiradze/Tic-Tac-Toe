@@ -13,12 +13,14 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+
   background-color: #ae6afa;
 }
 
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
+  width: 23%;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 100px);
   gap: 5px;
   justify-content: center;
@@ -28,8 +30,6 @@ body {
 .cell {
   background-color: white;
   border-radius: 5px;
-  width: 100px;
-  height: 100px;
 
   display: flex;
   align-items: center;
@@ -54,4 +54,70 @@ button {
   border: none;
   border-radius: 5px;
   background-color: #ffffff;
+}
+
+@media screen and (max-width: 1250px) {
+  .board {
+    width: 27%;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .board {
+    width: 31%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .board {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .board {
+    width: 39%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .board {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .board {
+    width: 52%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .board {
+    width: 59%;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .board {
+    width: 71%;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .board {
+    width: 81%;
+  }
+}
+
+@media screen and (max-width: 349px) {
+  .board {
+    width: 91%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .board {
+    width: 98%;
+  }
 }

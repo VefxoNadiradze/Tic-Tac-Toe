@@ -59,7 +59,6 @@ function WinnerPlayer() {
       turnWinner.innerHTML = `${v1} won`;
       running = false;
 
-      console.log(running);
       break;
     }
   }
