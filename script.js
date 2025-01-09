@@ -19,7 +19,7 @@ initialGame();
 
 function initialGame() {
   cell.map((item) => item.addEventListener("click", cellClick));
-
+  restart.addEventListener("click", RestartGame);
   turnWinner.innerHTML = `${currentPlayer}'s turn`;
 
   running = true;
@@ -70,4 +70,13 @@ function WinnerPlayer() {
   }
 }
 
-function RestartGame() {}
+function RestartGame() {
+  cell.map((item) => {
+    item.innerHTML = "";
+  });
+  currentPlayer = "O";
+  running = false;
+  spaces = Array(9).fill("");
+
+  initialGame();
+}
