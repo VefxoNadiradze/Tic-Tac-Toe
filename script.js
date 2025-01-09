@@ -19,6 +19,9 @@ initialGame();
 
 function initialGame() {
   cell.map((item) => item.addEventListener("click", cellClick));
+
+  turnWinner.innerHTML = `${currentPlayer}'s turn`;
+
   running = true;
 }
 
@@ -28,10 +31,12 @@ function cellClick() {
   if (spaces[cellIndex] !== "" || running == false) {
     return;
   }
-
   spaces[cellIndex] = currentPlayer;
 
   changePlayer(this);
+  turnWinner.innerHTML = `${currentPlayer}'s turn`;
+
+  WinnerPlayer();
 }
 
 function changePlayer(item) {
@@ -39,6 +44,30 @@ function changePlayer(item) {
   currentPlayer = currentPlayer === "O" ? "X" : "O";
 }
 
-function WinnerPlayer() {}
+function WinnerPlayer() {
+  for (let i = 0; i < winningCombinations.length; i++) {
+    let combinationIndex = winningCombinations[i];
+    let v1 = spaces[combinationIndex[0]];
+    let v2 = spaces[combinationIndex[1]];
+    let v3 = spaces[combinationIndex[2]];
+
+    if (v1 === "" || v2 === "" || v3 === "") {
+      continue;
+    }
+
+    if (v1 == v2 && v2 == v3) {
+      turnWinner.innerHTML = `${v1} won`;
+      running = false;
+
+      console.log(running);
+      break;
+    }
+  }
+
+  if (!spaces.includes("")) {
+    turnWinner.innerHTML = `draw`;
+    running = false;
+  }
+}
 
 function RestartGame() {}
