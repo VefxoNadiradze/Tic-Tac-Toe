@@ -14,3 +14,13 @@ const winningCombinations = [
   [0, 4, 8],
   [2, 4, 6],
 ];
+
+function initialGame() {}
+
+function cellClick() {}
+
+function changePlayer() {}
+
+function WinnerPlayer() {}
+
+function RestartGame() {}
